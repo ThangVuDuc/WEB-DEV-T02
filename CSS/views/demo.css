@@ -1,5 +1,5 @@
 ﻿.table-content {
-    height: 500px;
+    height: 300px;
     overflow: auto;
 }
 
@@ -33,10 +33,82 @@
     width: 24px;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
-.text-right{
+.text-right {
     text-align: right;
 }
+
+#dialog {
+    display: none;
+}
+
+    /*Chỉnh sửa giao diện dialog thêm mới*/
+    #dialog .contain {
+        width: 100%;
+    }
+
+        #dialog .contain.input-data {
+            height: 80%;
+            display: flex;
+        }
+
+        #dialog .contain.button-data {
+            height: 20%;
+        }
+
+/*Chỉnh sửa giao diện phần input-data*/
+.input-data .sub-contain {
+    width: 50%;
+}
+
+    .input-data .sub-contain .input-title {
+        display: flex;
+        margin-bottom: 8px;
+        height: 40px;
+        align-items: center;
+    }
+
+        .input-data .sub-contain .input-title .title {
+            width: 30%;
+        }
+
+        .input-data .sub-contain .input-title .input {
+            width: 70%;
+        }
+
+            .input-data .sub-contain .input-title .input input {
+                height: 32px;
+                border-radius: 3px;
+                border: 1px solid #000;
+                padding: 0 8px;
+            }
+
+/*Chỉnh sửa giao diện phần button-data*/
+.button-data button {
+    height: 32px;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+
+    .button-data button.save {
+        background-color: #026b97;
+        color: #fff;
+    }
+
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .detail-table th {
+        border: 1px solid #000;
+    }
+
+    .detail-table td {
+        border: 1px solid #000;
+    }

@@ -186,6 +186,7 @@
     <Content Include="Scripts\libraries\bootstrap.min.js" />
     <Content Include="Scripts\libraries\colResizable-1.6.min.js" />
     <Content Include="Scripts\libraries\gijgo.min.js" />
+    <Content Include="Scripts\libraries\jquery-1.12.4.js" />
     <Content Include="Scripts\libraries\jquery-1.12.4.min.js" />
     <Content Include="CSS\libraries\bootstrap-theme.css.map" />
     <Content Include="CSS\libraries\bootstrap-theme.min.css.map" />
@@ -214,19 +215,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\RefDetailsController.cs" />
     <Compile Include="Controllers\Refs1Controller.cs" />
-    <Compile Include="Controllers\RefsDemoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907240753598_Initial.cs" />
-    <Compile Include="Migrations\201907240753598_Initial.Designer.cs">
-      <DependentUpon>201907240753598_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\FresherTrainingContext.cs" />
-    <Compile Include="Models\Ref.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -243,8 +242,23 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907240753598_Initial.resx">
-      <DependentUpon>201907240753598_Initial.cs</DependentUpon>
+    <ProjectReference Include="C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.BL\MISA.BL.csproj">
+      <Project>{1c21d967-147a-4f24-bd90-563efa78de36}</Project>
+      <Name>MISA.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\MISA.DL.csproj">
+      <Project>{55409467-cc7c-4146-a7b4-842a00e08e78}</Project>
+      <Name>MISA.DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\MISA.Entities.csproj">
+      <Project>{e386ced2-e8c7-4959-93f5-4884fc436cca}</Project>
+      <Name>MISA.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

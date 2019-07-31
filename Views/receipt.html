@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="/Contents/images/favicon.ico" rel="shortcut icon" />
+
+    <link href="/CSS/libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/views/header.css" rel="stylesheet" />
     <link href="/CSS/views/menu.css" rel="stylesheet" />
     <link href="/CSS/views/style.css" rel="stylesheet" />
@@ -345,25 +347,87 @@
                     <thead>
                         <tr>
                             <th fieldName=""></th>
-                            <th fieldName="refDate">Ngày</th>
-                            <th fieldName="refNo">Số chứng từ</th>
-                            <th fieldName="refType">Loại chứng từ</th>
-                            <th fieldName="total">Tổng tiền</th>
-                            <th fieldName="contactName">Đối tượng nộp nhận</th>
-                            <th fieldName="reason">Lí do</th>
+                            <th fieldName="RefDate">Ngày</th>
+                            <th fieldName="RefNo">Số chứng từ</th>
+                            <th fieldName="RefType">Loại chứng từ</th>
+                            <th fieldName="Total">Tổng tiền</th>
+                            <th fieldName="ContactName">Đối tượng nộp nhận</th>
+                            <th fieldName="Reason">Lí do</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </div>
-            <div>
-                <table>
-                    <tr>
-                        <td>DEMO DEMO</td>
-                        <td>DEMO DEMO</td>
-                        <td>DEMO DEMO</td>
-                        <td>DEMO DEMO</td>
-                    </tr>
+            <div id="dialog" title="Thêm mới phiếu thu">
+                <div class="contain input-data">
+                    <div class="sub-contain">
+                        <div class="input-title">
+                            <div class="title">
+                                Ngày
+                            </div>
+                            <div class="input">
+                                <input property="refDate"/>
+                            </div>
+                        </div>
+                        <div class="input-title">
+                            <div class="title">
+                                Số phiếu thu 
+                            </div>
+                            <div class="input">
+                                <input property="refNo"/>
+                            </div>
+                        </div>
+                        <div class="input-title">
+                            <div class="title">
+                                Loại chứng từ
+                            </div>
+                            <div class="input">
+                                <input property="refType"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-contain">
+                        <div class="input-title">
+                            <div class="title">
+                                Tổng tiền
+                            </div>
+                            <div class="input">
+                                <input property="total"/>
+                            </div>
+                        </div>
+                        <div class="input-title">
+                            <div class="title">
+                                <span>Đối tượng nộp/nhận</span>
+                            </div>
+                            <div class="input">
+                                <input property="contactName"/>
+                            </div>
+                        </div>
+                        <div class="input-title">
+                            <div class="title">
+                                Lý do
+                            </div>
+                            <div class="input">
+                                <input property="reason"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contain button-data">
+                    <button class="save">Save</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </div>
+            <div class="detail-container">
+                <table class="detail-table">
+                    <thead>
+                        <tr>
+                            <th fieldName ="Description">Diễn giải</th>
+                            <th fieldName ="Total">Số tiền</th>
+                            <th fieldName ="CollectionType">Mục đích thu/chi</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
@@ -372,6 +436,8 @@
         </div>
     </div>
     <script src="/Scripts/libraries/jquery-3.4.1.js"></script>
+    <script src="/Scripts/libraries/jquery-1.12.4.js"></script>
+    <script src="/Scripts/libraries/jquery-ui.js"></script>
     <script src="/Scripts/common/common.js"></script>
     <script src="/Scripts/common/base.js"></script>
     <script src="/Scripts/views/receipt.js"></script>

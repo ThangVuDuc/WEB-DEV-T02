@@ -18,10 +18,11 @@
             async: false,
             dataType: "json",
             success: function (res) {
-                fakeData = res;
-            },
-            error: function (res) {
-                debugger
+                if (res.Success) {
+                    fakeData = res.Data;
+                } else {
+                    alert(res.Message);
+                }
             }
         });
         return fakeData;
@@ -29,15 +30,15 @@
 
     loadData() {
         var data = this.getData();
-        var fields = $('th[fieldName]');
+        var fields = $('.main-table th[fieldName]');
         $('.main-table tbody').empty();
         $.each(data, function (index, item) {
-            var rowHTML = $('<tr recordID = "{0}"></tr>'.format(item["refID"]));
+            var rowHTML = $('<tr></tr>').data("recordID",item["RefID"]);
             $.each(fields, function (fieldIndex, fieldItem) {
                 var fieldName = fieldItem.getAttribute('fieldName');
                 var value = item[fieldName];
                 var cls = 'text-left';
-                if (fieldName === "refDate") {
+                if (fieldName === "RefDate") {
                     value = new Date(value);
                 }
                 var type = $.type(value);
