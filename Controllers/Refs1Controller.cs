@@ -1,4 +1,5 @@
 ﻿using FresherTraining.Properties;
+using MISA.BL;
 using MISA.DL;
 using MISA.Entities;
 using System;
@@ -9,6 +10,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -17,19 +19,21 @@ namespace FresherTraining.Controllers
     public class Refs1Controller : ApiController
     {
         private RefDL _refDL = new RefDL();
+        private RefBL _refBL = new RefBL();
         /// <summary>
         /// Thực hiện lấy dữ liệu từ bảng dữ liệu REF
         /// Người tạo VDThang 24/07/2019
         /// </summary>
         /// <returns>Danh sách các phiếu thu</returns>
-        [Route("refs")]
+        [Route("refs/{pageIndex}/{pageSize}")]
         [HttpGet]
-        public AjaxResult GetRefs()
+        public async Task<AjaxResult> GetRefs([FromUri]int pageIndex, int pageSize)
         {
+            await Task.Delay(1000);
             var _ajaxResult = new AjaxResult();
             try
             {
-                _ajaxResult.Data = _refDL.GetData(); 
+                _ajaxResult.Data = _refBL.GetPagingData(pageIndex, pageSize); 
             }catch(Exception ex)
             {
                 _ajaxResult.Success = false;
@@ -39,6 +43,23 @@ namespace FresherTraining.Controllers
             return _ajaxResult;
         }
 
+        [Route("refs/filtering/{searchType}/{searchValue}")]
+        [HttpGet]
+        public AjaxResult FilterRefs([FromUri] int searchType, string searchValue)
+        {
+            var _ajaxResult = new AjaxResult();
+            try
+            {
+                _ajaxResult.Data = _refBL.FilterData(searchType, searchValue);
+            }
+            catch (Exception ex)
+            {
+                _ajaxResult.Success = false;
+                _ajaxResult.Message = Resources.errorVN;
+                _ajaxResult.Data = ex;
+            }
+            return _ajaxResult;
+        }
         /// <summary>
         /// Thực hiện thêm mới 1 phiếu thu
         /// Người tạo VDThang 24/07/2019

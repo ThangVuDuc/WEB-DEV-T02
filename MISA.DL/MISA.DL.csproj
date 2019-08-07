@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55409467-CC7C-4146-A7B4-842A00E08E78}</ProjectGuid>
+    <ProjectGuid>{95629C51-32A8-466A-A16F-CAEA05C67503}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MISA.DL</RootNamespace>
@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MISA.Entities\MISA.Entities.csproj">
-      <Project>{e386ced2-e8c7-4959-93f5-4884fc436cca}</Project>
+      <Project>{89dcf823-60db-4353-9025-d368c81f3259}</Project>
       <Name>MISA.Entities</Name>
     </ProjectReference>
   </ItemGroup>

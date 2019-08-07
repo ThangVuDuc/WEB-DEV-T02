@@ -133,6 +133,7 @@
     <Content Include="Contents\images\ic_sogiaohang.png" />
     <Content Include="Contents\images\Image.jpg" />
     <Content Include="Contents\images\Image.png" />
+    <Content Include="Contents\images\load-data.gif" />
     <Content Include="Contents\images\loader.gif" />
     <Content Include="Contents\images\loading.gif" />
     <Content Include="Contents\images\logo-mshopkeeper.png" />

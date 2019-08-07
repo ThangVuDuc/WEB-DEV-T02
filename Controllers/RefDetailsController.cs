@@ -31,7 +31,7 @@ namespace FresherTraining.Controllers
             var _ajaxResult = new AjaxResult();
             try
             {
-                _ajaxResult.Data = _refDL.GetRefDetailByRefID(refid);
+                _ajaxResult.Data = _refDL.GetRefByRefID(refid);
             }catch(Exception ex)
             {
                 _ajaxResult.Data = ex;

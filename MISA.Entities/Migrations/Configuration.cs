@@ -10,6 +10,7 @@ namespace MISA.Entities
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(MISA.Entities.FresherTrainingContext context)

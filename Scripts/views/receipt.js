@@ -11,9 +11,32 @@ class Ref extends Base {
     InitEventsRef() {
         $('.main-table tbody').on('click', 'tr .uncheck', this.TickRow);
         $('.toolbar').on('click', 'button.delete', this.ClickButtonDelete.bind(this));
-        $('.main-table tbody').on('click', 'tr', {"jsObject": this}, this.RowOnClick);
+        $('.main-table tbody').on('click', 'tr', { "jsObject": this }, this.RowOnClick);
         $('.toolbar').on('click', 'button.add-new', this.OpenDialogAdd);
         $('#dialog').on('click', 'button.save', this.AddNewRef.bind(this));
+        $(document).on('keyup', '#pageIndex', this.PagingTable.bind(this));
+        $(document).on('click', '.btn-search', this.FilterData);
+    }
+
+    FilterData() {
+        var searchValue = $('.search-value').val();
+        var searchType = $('.search-type option:selected').val();
+        $.ajax({
+            method: 'GET',
+            url: '/refs/filtering/{0}/{1}'.format(searchType, searchValue),
+            success: function (res) {
+                debugger
+            }
+        })
+    }
+
+
+
+    PagingTable(event) {
+        var me = this;
+        if (event.keyCode === 13) {
+            me.loadData();
+        }
     }
 
     /**
@@ -79,7 +102,7 @@ class Ref extends Base {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             data: JSON.stringify(listRefID),
-            success: function (res) { 
+            success: function (res) {
                 me.loadData();
                 me.SetStatusButton();
             },

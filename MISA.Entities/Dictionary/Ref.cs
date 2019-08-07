@@ -14,5 +14,6 @@ namespace MISA.Entities
         public decimal Total { get; set; }
         public string ContactName { get; set; }
         public string Reason { get; set; }
+
     }
 }

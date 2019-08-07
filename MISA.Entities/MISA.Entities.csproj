@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E386CED2-E8C7-4959-93F5-4884FC436CCA}</ProjectGuid>
+    <ProjectGuid>{89DCF823-60DB-4353-9025-D368C81F3259}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MISA.Entities</RootNamespace>
@@ -49,10 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dictionary\AjaxResult.cs" />
-    <Compile Include="Dictionary\RefDetail.cs" />
-    <Compile Include="Migrations\201907310743595_Initial.cs" />
-    <Compile Include="Migrations\201907310743595_Initial.Designer.cs">
-      <DependentUpon>201907310743595_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201907250224587_Initial.cs" />
+    <Compile Include="Migrations\201907250224587_Initial.Designer.cs">
+      <DependentUpon>201907250224587_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Dictionary\FresherTrainingContext.cs" />
@@ -60,8 +59,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907310743595_Initial.resx">
-      <DependentUpon>201907310743595_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907250224587_Initial.resx">
+      <DependentUpon>201907250224587_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

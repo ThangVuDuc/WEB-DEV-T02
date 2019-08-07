@@ -340,6 +340,17 @@
                             <span>Lấy dữ liệu</span>
                         </div>
                     </div>
+
+                    <select class="search-type">
+                        <option value="1">Ngày</option>
+                        <option value="2">Số chứng từ</option>
+                        <option value="3">Loại chứng từ</option>
+                        <option value="4">Lý do</option>
+                        <option value="5">Tổng tiền</option>
+                        <option value="6">Đối tượng nộp nhận</option>
+                    </select>
+                    <input type="text" class="search-value"/>
+                    <button class="btn-search">Tìm kiếm</button>
                 </div>
             </div>
             <div class="table-content">
@@ -366,15 +377,15 @@
                                 Ngày
                             </div>
                             <div class="input">
-                                <input property="refDate"/>
+                                <input property="refDate" />
                             </div>
                         </div>
                         <div class="input-title">
                             <div class="title">
-                                Số phiếu thu 
+                                Số phiếu thu
                             </div>
                             <div class="input">
-                                <input property="refNo"/>
+                                <input property="refNo" />
                             </div>
                         </div>
                         <div class="input-title">
@@ -382,7 +393,7 @@
                                 Loại chứng từ
                             </div>
                             <div class="input">
-                                <input property="refType"/>
+                                <input property="refType" />
                             </div>
                         </div>
                     </div>
@@ -392,7 +403,7 @@
                                 Tổng tiền
                             </div>
                             <div class="input">
-                                <input property="total"/>
+                                <input property="total" />
                             </div>
                         </div>
                         <div class="input-title">
@@ -400,7 +411,7 @@
                                 <span>Đối tượng nộp/nhận</span>
                             </div>
                             <div class="input">
-                                <input property="contactName"/>
+                                <input property="contactName" />
                             </div>
                         </div>
                         <div class="input-title">
@@ -408,7 +419,7 @@
                                 Lý do
                             </div>
                             <div class="input">
-                                <input property="reason"/>
+                                <input property="reason" />
                             </div>
                         </div>
                     </div>
@@ -422,14 +433,19 @@
                 <table class="detail-table">
                     <thead>
                         <tr>
-                            <th fieldName ="Description">Diễn giải</th>
-                            <th fieldName ="Total">Số tiền</th>
-                            <th fieldName ="CollectionType">Mục đích thu/chi</th>
+                            <th fieldName="Description">Diễn giải</th>
+                            <th fieldName="Total">Số tiền</th>
+                            <th fieldName="CollectionType">Mục đích thu/chi</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </div>
+            <div id="load-data">
+                <img src="/Contents/images/load-data.gif" />
+            </div>
+            <input id="pageIndex" value="1" />
+            <input id="pageSize" value="10" />
         </div>
 
         <div class="grid-detail">

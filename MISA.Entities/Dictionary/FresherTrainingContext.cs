@@ -20,6 +20,5 @@ namespace MISA.Entities
         }
 
         public System.Data.Entity.DbSet<MISA.Entities.Ref> Refs { get; set; }
-        public System.Data.Entity.DbSet<MISA.Entities.RefDetail> RefDetails { get; set; }
     }
 }
